@@ -1,23 +1,23 @@
 {"intents": [
     {"tag": "saludo",
      "patterns": ["Hola", "Buenas", "Que tal", "Hey", "Buenos dias"],
-     "responses": ["Hola", "Hola, en qué puedo ayudarte?", "Hola! Encantado"]
+     "responses": ["Hola"]
     },
     {"tag": "despedida",
      "patterns": ["Adiós", "Hasta luego", "Hasta otra"],
-     "responses": ["Adiós!", "Que tengas un buen día!", "Hasta otra!"]
+     "responses": ["Adiós!"]
     },
     {"tag": "gracias",
      "patterns": ["Gracias", "Muchas gracias", "Gracias por la ayuda", "Gracias, solucionado"],
-     "responses": ["Encantado de ayudar!", "No hay problema!", "De nada!", "Un placer!"]
+     "responses": ["Encantado de ayudar!"]
     },
     {"tag": "crearcuenta",
     "patterns": ["cómo puedo crear una cuenta?", "quisiera crear una cuenta", "puedes crearme una cuenta?", "me indicas cómo crear una cuenta?", "dónde puedo crear una cuenta?"],
-    "responses": ["Puedes crear una cuenta haciendo click en el botón de arriba a la derecha", "Desde la pestaña de registro de usuario arriba a la derecha puedes crear tu cuenta"]
+    "responses": ["Puedes crear una cuenta haciendo click en el botón de arriba a la derecha"]
     },
     {"tag": "desactivarcuenta",
     "patterns": ["puedo desactivar mi cuenta?", "me gustaría descativar mi cuenta", "quiero borrar mi cuenta"],
-    "responses": ["Claro, en tu perfil puedes encontrar la opción de eliminar cuenta", "Puedes eliminar tu cuenta desde el perfil de usuario"]
+    "responses": ["Claro, en tu perfil puedes encontrar la opción de eliminar cuenta"]
     }
 ]
 }
