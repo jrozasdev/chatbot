@@ -43,13 +43,13 @@ train_labels = label_encoder.transform(train_labels)
 # Tokenize training data for the model
 num_unique_words = count_unique_words(train_sentences)
 embedding_dim = 20
-max_lenth = 20
+max_length = 20
 
 tokenizer = Tokenizer(num_words = num_unique_words)
 tokenizer.fit_on_texts(train_sentences)
 word_index = tokenizer.word_index
 sequences = tokenizer.texts_to_sequences(train_sentences)
-padded_sequences = pad_sequences(sequences, truncating='post', maxlen=max_lenth)
+padded_sequences = pad_sequences(sequences, truncating='post', maxlen=max_length)
 num_classes = len(labels)
 
 """
@@ -59,7 +59,7 @@ Using GlobalAveragePooling1D layer for its usefulness capturing the meaning of a
 this will be a kind of classification.
 """
 model = Sequential()
-model.add(Embedding(num_unique_words, embedding_dim, input_length=max_lenth))
+model.add(Embedding(num_unique_words, embedding_dim, input_length=max_length))
 model.add(GlobalAveragePooling1D())
 model.add(Dense(20, activation='relu'))
 model.add(Dense(10, activation='relu'))
