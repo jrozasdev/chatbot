@@ -4,7 +4,7 @@
      "responses": ["Hola"]
     },
     {"tag": "despedida",
-     "patterns": ["Adiós", "Hasta luego", "Hasta otra"],
+     "patterns": ["Adiós", "Hasta luego", "Hasta otra", "Adios"],
      "responses": ["Adiós!"]
     },
     {"tag": "gracias",
@@ -17,7 +17,7 @@
     },
     {"tag": "desactivarcuenta",
     "patterns": ["puedo desactivar mi cuenta?", "me gustaría descativar mi cuenta", "quiero borrar mi cuenta"],
-    "responses": ["Claro, en tu perfil puedes encontrar la opción de eliminar cuenta"]
+    "responses": ["En tu perfil puedes encontrar la opción de eliminar cuenta"]
     }
 ]
 }
