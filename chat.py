@@ -1,44 +1,27 @@
 """
 Simple chat to interact with the chatbot through terminal.
 """
-import tensorflow as tf
-from tensorflow import keras
-import json
+
 import numpy as np
-from sklearn.preprocessing import LabelEncoder
-from keras.preprocessing.text import Tokenizer
+import pickle
+import json
+
+from tensorflow import keras
 from tensorflow.keras.preprocessing.sequence import pad_sequences
-from utils.utils import count_unique_words
-
-#TODO: Reuse the tokenizer and label encoder from the model training
-
-
-with open('intents.json') as file:
-    data = json.load(file)
-
-train_sentences = []
-train_labels = []
-labels = []
-responses = []
-
-for intent in data['intents']:
-    for pattern in intent['patterns']:
-        train_sentences.append(pattern)
-        train_labels.append(intent['tag'])
-    responses.append(intent['responses'])
-    labels.append(intent['tag'])
-
 
 # Importing the trained saved model
 model = keras.models.load_model('chatbot_trained_model')
 
-# Tokenizer
-tokenizer = Tokenizer(num_words=count_unique_words(train_sentences))
-tokenizer.fit_on_texts(train_sentences)
+# Load the tokenizer from disk
+with open('tokenizer.pkl', 'rb') as handle:
+    tokenizer = pickle.load(handle)
 
-# Label encoder
-label_encoder = LabelEncoder()
-label_encoder.fit(train_labels)
+# Load the label encoder from disk
+with open('encoder.pkl', 'rb') as handle:
+    label_encoder = pickle.load(handle)
+
+with open("intents.json") as file:
+    data = json.load(file)
 
 max_length = 20
 
