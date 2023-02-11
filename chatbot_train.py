@@ -5,7 +5,7 @@ Training the chatbot.
 
 import numpy as np
 import json
-import tensorflow as tf
+import pickle
 from tensorflow import keras
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Embedding, GlobalAveragePooling1D
@@ -76,3 +76,11 @@ history = model.fit(padded_sequences, np.array(train_labels), epochs=epochs)
 
 # Saving trained model
 model.save("chatbot_trained_model")
+
+# Save the tokenizer
+with open('tokenizer.pkl', 'wb') as handle:
+    pickle.dump(tokenizer, handle, protocol=pickle.HIGHEST_PROTOCOL)
+
+# Save the label encoder
+with open('encoder.pkl', 'wb') as handle:
+    pickle.dump(label_encoder, handle, protocol=pickle.HIGHEST_PROTOCOL)
